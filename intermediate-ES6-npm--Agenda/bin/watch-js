@@ -1,0 +1,11 @@
+#!/bin/bash
+watchify \
+-x react \
+-x react-dom \
+-x jquery \
+-x moment \
+src/js/app.js \
+-o build/js/app.js \
+--poll \
+--debug \
+--verbose
