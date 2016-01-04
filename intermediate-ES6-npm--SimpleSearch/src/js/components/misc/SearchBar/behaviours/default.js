@@ -1,5 +1,4 @@
 export default (Component) => {
-
 	return {
 		onInputChange: (e) => {
 			Component.setState({
@@ -12,5 +11,4 @@ export default (Component) => {
 			});
 		}
 	}
-
 };

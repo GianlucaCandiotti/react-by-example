@@ -1,12 +1,11 @@
-import React, { Component, PropTypes } from 'react';
+import React, {Component, PropTypes} from 'react';
 import _ from 'lodash';
 
 import Item from './Item';
 
 export default class ItemList extends Component {
-
 	static propTypes = {
-		items: PropTypes.array
+		items: PropTypes.array.isRequired
 	};
 
 	render() {
@@ -20,9 +19,8 @@ export default class ItemList extends Component {
 
 		return (
 			<ul>
-				{ mapped_items }
+				{mapped_items}
 			</ul>
 		);
 	}
-	
 }

@@ -1,8 +1,8 @@
-import React, { Component, PropTypes } from 'react';
+import React, {Component, PropTypes} from 'react';
 
 export default class Item extends Component {
   static propTypes = {
-    item: PropTypes.string,
+    item: PropTypes.string.isRequired,
   };
 
   render() {
@@ -12,7 +12,7 @@ export default class Item extends Component {
   	
     return (
       <div>
-      	{ item }
+      	{item}
       </div>
     );
   }

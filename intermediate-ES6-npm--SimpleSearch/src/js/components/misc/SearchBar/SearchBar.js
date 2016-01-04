@@ -1,11 +1,10 @@
-import React, { Component, PropTypes } from 'react'
+import React, {Component, PropTypes} from 'react'
 
 export default class SearchBar extends Component {
-
 	static propTypes = {
 		placeholder: PropTypes.string,
-		search_value: PropTypes.string,
-		behaviour: PropTypes.object
+		search_value: PropTypes.string.isRequired,
+		behaviour: PropTypes.object.isRequired
 	};
 
 	render() {
@@ -17,7 +16,7 @@ export default class SearchBar extends Component {
 
 		return (
 			<div>
-				<button className="is-icon search-icon"></button>
+				<span className="search-icon"></span>
 				<div>
 					<input placeholder={placeholder} value={search_value} onChange={(e) => behaviour.onInputChange(e)} />
 					<button className="is-icon cross-icon" onClick={behaviour.onResetSearchValue}></button>
@@ -25,5 +24,4 @@ export default class SearchBar extends Component {
 			</div>
 		);
 	}
-
 }

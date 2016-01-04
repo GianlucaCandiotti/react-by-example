@@ -1,14 +1,12 @@
-import React, { Component, PropTypes } from 'react';
+import React, {Component, PropTypes} from 'react';
 import _ from 'lodash';
 
 import SearchBar from '../../misc/SearchBar/SearchBar';
 import ItemsList from '../../misc/ItemsList';
 
-import searchBarBehaviour from '../../misc/SearchBar/behaviours/default';
-
+import searchBarDefaultBehaviour from '../../misc/SearchBar/behaviours/default';
 
 export default class SimpleSearch extends Component {
-
 	static defaultProps = {
 		items: [
 			"Pizza",
@@ -41,7 +39,7 @@ export default class SimpleSearch extends Component {
 			items
 		} = this.props;
 
-		const search_bar_behaviour = searchBarBehaviour(this);
+		const searchBar_default_behaviour = searchBarDefaultBehaviour(this);
 
 		const filtered_items = _.filter(items, (item) => {
 			return _.contains(item.toLowerCase(), search_value.toLowerCase());
@@ -49,10 +47,9 @@ export default class SimpleSearch extends Component {
 
 		return (
 			<div>
-				<SearchBar placeholder="Search for items" search_value={search_value} behaviour={search_bar_behaviour}/>
+				<SearchBar placeholder="Search for items" search_value={search_value} behaviour={searchBar_default_behaviour}/>
 				<ItemsList items={filtered_items}/>
 			</div>
 		);
 	}
-
 }
